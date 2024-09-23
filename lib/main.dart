@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freelancing_appp/constants/theme.dart';
 import 'package:freelancing_appp/providers/theme_provider.dart';
+import 'package:freelancing_appp/views/splash_view.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -20,11 +21,11 @@ class MyApp extends StatelessWidget {
         child: Builder(builder: (context) {
           final themeChanger = Provider.of<ThemeProvider>(context);
           return MaterialApp(
-            title: 'Flutter Demo',
+            title: 'Freelancing Guide App',
             themeMode: themeChanger.themeMode,
             theme: lightTheme,
             darkTheme: darkTheme,
-            home: const Text("Hi"),
+            home: const SplashView(),
           );
         }));
   }
