@@ -4,7 +4,7 @@ import 'package:freelancing_appp/constants/colors.dart';
 final darkTheme = ThemeData(
   useMaterial3: true,
   brightness: Brightness.dark,
-  appBarTheme: AppBarTheme(color: appbarColor),
+  appBarTheme: AppBarTheme(color: appbarColor, surfaceTintColor: appbarColor),
 );
 
 final lightTheme = ThemeData(
@@ -12,5 +12,5 @@ final lightTheme = ThemeData(
   brightness: Brightness.light,
   scaffoldBackgroundColor: scaffoldBgColor,
   primaryColor: primaryTextColor,
-  appBarTheme: AppBarTheme(color: appbarColor),
+  appBarTheme: AppBarTheme(color: appbarColor, surfaceTintColor: appbarColor),
 );
