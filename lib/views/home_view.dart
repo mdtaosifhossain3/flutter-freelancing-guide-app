@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:freelancing_appp/widgets/appbar.dart';
 import 'package:freelancing_appp/widgets/card.dart';
 import 'package:freelancing_appp/widgets/drawer_widget.dart';
@@ -571,7 +572,7 @@ class _HomeViewState extends State<HomeView> {
     super.initState();
     _bannerAd = BannerAd(
         size: AdSize.banner,
-        adUnitId: "ca-app-pub-9120979775445629/3250207881",
+        adUnitId: "${dotenv.env["BANNER_UNIT_ID"]}",
         request: const AdRequest(),
         listener: BannerAdListener(onAdLoaded: (_) {
           setState(() {
@@ -585,7 +586,7 @@ class _HomeViewState extends State<HomeView> {
     _bannerAd.load();
 
     InterstitialAd.load(
-        adUnitId: "ca-app-pub-9120979775445629/4854933593",
+        adUnitId: "${dotenv.env["INTERSTITIA_UNIT_ID"]}",
         request: const AdRequest(),
         adLoadCallback: InterstitialAdLoadCallback(onAdLoaded: (ad) {
           setState(() {
