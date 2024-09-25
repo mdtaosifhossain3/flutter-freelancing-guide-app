@@ -18,7 +18,7 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     Timer(const Duration(seconds: 2), () {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-        return HomeView();
+        return const HomeView();
       }));
     });
     super.initState();

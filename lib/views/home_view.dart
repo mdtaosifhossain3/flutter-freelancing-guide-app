@@ -6,7 +6,7 @@ import 'package:freelancing_appp/widgets/drawer_widget.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class HomeView extends StatefulWidget {
-  HomeView({super.key});
+  const HomeView({super.key});
 
   @override
   State<HomeView> createState() => _HomeViewState();

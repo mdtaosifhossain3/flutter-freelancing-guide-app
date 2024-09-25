@@ -6,14 +6,15 @@ import 'package:freelancing_appp/widgets/text_widget.dart';
 class UniqueColorCard extends StatelessWidget {
   final String title;
   final int index;
-  final data;
-  final showInterstialAdd;
+  final String data;
+  final void Function() showInterstialAdd;
 
-  UniqueColorCard(
-      {required this.title,
+  const UniqueColorCard(
+      {super.key,
+      required this.title,
       required this.index,
-      this.data,
-      this.showInterstialAdd});
+      required this.data,
+      required this.showInterstialAdd});
 
   // Predefined list of colors for light mode
   static const List<Color> lightModeColors = [

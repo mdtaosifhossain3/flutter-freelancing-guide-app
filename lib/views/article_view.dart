@@ -7,9 +7,9 @@ import 'package:freelancing_appp/widgets/text_widget.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class ArticleView extends StatefulWidget {
-  var data;
+  final String data;
   final String title;
-  ArticleView({super.key, required this.data, required this.title});
+  const ArticleView({super.key, required this.data, required this.title});
 
   @override
   State<ArticleView> createState() => _ArticleViewState();
