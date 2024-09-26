@@ -8,7 +8,6 @@ This is a mobile application built using Flutter that provides essential guides 
 - **Dark Mode/Light Mode**: Toggle between light and dark themes for a comfortable reading experience based on your preference.
 - **Responsive Design**: The UI is optimized for different screen sizes to ensure an enjoyable experience on various devices.
   
-## Screenshots
 
 _Include a few screenshots of the app here to showcase the UI_
 
@@ -47,7 +46,3 @@ Contributions are welcome! Feel free to open issues or submit pull requests to h
 ## License
 
 This project is licensed under the MIT License.
-
----
-
-You can modify the "Contributions" or "License" sections based on your preferences.
