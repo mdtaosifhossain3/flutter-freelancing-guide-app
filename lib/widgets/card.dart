@@ -7,14 +7,13 @@ class UniqueColorCard extends StatelessWidget {
   final String title;
   final int index;
   final String data;
-  final void Function() showInterstialAdd;
 
-  const UniqueColorCard(
-      {super.key,
-      required this.title,
-      required this.index,
-      required this.data,
-      required this.showInterstialAdd});
+  const UniqueColorCard({
+    super.key,
+    required this.title,
+    required this.index,
+    required this.data,
+  });
 
   // Predefined list of colors for light mode
   static const List<Color> lightModeColors = [
@@ -127,7 +126,6 @@ class UniqueColorCard extends StatelessWidget {
 
     return InkWell(
       onTap: () {
-        showInterstialAdd();
         Navigator.push(context, MaterialPageRoute(builder: (context) {
           return ArticleView(data: data, title: title);
         }));

@@ -30,7 +30,7 @@ PreferredSizeWidget appbar({title}) {
                           themeProvider: themeProvider,
                         ),
                     width: 150,
-                    height: 100,
+                    height: 150,
                     backgroundColor: themeProvider.themeMode == ThemeMode.light
                         ? appbarColor
                         : blackColor,
