@@ -6,54 +6,20 @@ import 'package:freelancing_appp/widgets/appbar.dart';
 import 'package:freelancing_appp/widgets/text_widget.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-class ArticleView extends StatefulWidget {
+class ArticleView extends StatelessWidget {
   final String data;
   final String title;
   const ArticleView({super.key, required this.data, required this.title});
 
   @override
-  State<ArticleView> createState() => _ArticleViewState();
-}
-
-class _ArticleViewState extends State<ArticleView> {
-  late BannerAd _bannerAd;
-
-  bool isBannerAdReady = false;
-  @override
-  void initState() {
-    _bannerAd = BannerAd(
-        size: AdSize.banner,
-        adUnitId: "${dotenv.env["BANNER_UNIT_ID"]}",
-        request: const AdRequest(),
-        listener: BannerAdListener(onAdLoaded: (_) {
-          setState(() {
-            isBannerAdReady = true;
-          });
-        }, onAdFailedToLoad: (add, error) {
-          isBannerAdReady = false;
-          add.dispose();
-        }));
-
-    _bannerAd.load();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _bannerAd.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: appbar(
-            title: TextWidget(
-          label: widget.title,
-          color: blackColor,
-        )),
+        appBar: AppBar(title:TextWidget(
+          label: title,
+          color: primaryTextColor,
+        ),automaticallyImplyLeading: true,),
         body: SingleChildScrollView(
-          child: Html(data: widget.data, style: {
+          child: Html(data: data, style: {
             "body": Style(
               lineHeight: LineHeight.number(1.5),
             ),
@@ -94,14 +60,6 @@ class _ArticleViewState extends State<ArticleView> {
                 fontStyle: FontStyle.italic)
           }),
         ),
-        bottomNavigationBar: isBannerAdReady
-            ? SizedBox(
-                height: _bannerAd.size.height.toDouble(),
-                width: _bannerAd.size.width.toDouble(),
-                child: AdWidget(
-                  ad: _bannerAd,
-                ),
-              )
-            : null);
+    );
   }
 }

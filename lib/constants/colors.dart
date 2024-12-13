@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 Color scaffoldBgColor = const Color(0xffE3E3E3);
 Color primaryTextColor = const Color(0xff29636B);
-Color greytColor = const Color(0xff8391A1);
+Color greyColor = const Color(0xff8391A1);
 Color appbarColor = const Color(0xffF3F3F3);
 Color blackColor = const Color(0xff1E232C);
 Color chatTextColor = const Color(0xffEFF4FF);

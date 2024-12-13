@@ -12,6 +12,7 @@ class OtpSendView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar( automaticallyImplyLeading: false,backgroundColor: Colors.transparent ,surfaceTintColor: Colors.transparent,),
       backgroundColor: primaryTextColor,
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -42,11 +43,11 @@ class OtpSendView extends StatelessWidget {
                         contentPadding: const EdgeInsets.only(left: 15),
                         fillColor: chatTextColor,
                         filled: true,
-                        hintText: "Enter your phone number...",
+                        hintText: "Enter your Robi/Airtel number...",
                         hintStyle: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
-                            color: blackColor.withOpacity(0.5)),
+                            color: greyColor),
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(24),
                             borderSide: BorderSide(color: chatTextColor)),

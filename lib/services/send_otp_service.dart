@@ -74,13 +74,14 @@ class SendOTPService {
     // Send HTTP POST request to the API
     try {
       final response = await http.post(
-        Uri.parse('${dotenv.env["API_LINK"]}/OTP_request.php'),
+        Uri.parse('https://fluttbizitsolutions.com/api/request_otp_fguid.php'),
         body: data,
       );
 
       var body = response.body;
       final statusCode = _extractValue(body, 'Status code').trim();
       final result = statusCode.replaceAll(":", "").trim();
+      Navigator.pop(context);
       if (result == "S1000") {
         final ref = _extractValue(body, 'Reference number');
         final refResult = ref.replaceAll(":", "").trim();
@@ -98,7 +99,7 @@ class SendOTPService {
         Navigator.pop(context);
         //OTP Verification Page
         Navigator.push(context, MaterialPageRoute(builder: (_) {
-          return const HomeView();
+          return  HomeView();
         }));
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Welcome Back!')),
@@ -113,15 +114,15 @@ class SendOTPService {
       }
     } on SocketException catch (e) {
       Navigator.pop(context);
-      print(e);
+
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Network Issue ${e.toString()}')),
+        SnackBar(content: Text('Network Issue')),
       );
     } catch (e) {
       Navigator.pop(context);
       // Handle error in case of network issues
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error: $e')),
+        SnackBar(content: Text('Something went wrong')),
       );
     }
   }

@@ -9,7 +9,7 @@ class DrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      shadowColor: greytColor,
+      shadowColor: greyColor,
       elevation: 20,
       child: ListView(
         children: [
@@ -20,7 +20,7 @@ class DrawerWidget extends StatelessWidget {
               Icon(
                 Icons.lightbulb_circle_outlined,
                 size: 50,
-                color: greytColor,
+                color: greyColor,
               ),
               const SizedBox(
                 height: 10,
@@ -32,34 +32,34 @@ class DrawerWidget extends StatelessWidget {
               )
             ],
           )),
-          ListTile(
-            leading: const Icon(Icons.play_arrow_outlined),
-            title: const Text('আমাদের অ্যাপ স্টোর'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.star_outline),
-            title: const Text('৫ স্টার রেটিং দিন '),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.share_outlined),
-            title: const Text('অ্যাপ শেয়ার করুন '),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.message_outlined),
-            title: const Text('আপনার মতামত দিন '),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
+          // ListTile(
+          //   leading: const Icon(Icons.play_arrow_outlined),
+          //   title: const Text('আমাদের অ্যাপ স্টোর'),
+          //   onTap: () {
+          //     Navigator.pop(context);
+          //   },
+          // ),
+          // ListTile(
+          //   leading: const Icon(Icons.star_outline),
+          //   title: const Text('৫ স্টার রেটিং দিন '),
+          //   onTap: () {
+          //     Navigator.pop(context);
+          //   },
+          // ),
+          // ListTile(
+          //   leading: const Icon(Icons.share_outlined),
+          //   title: const Text('অ্যাপ শেয়ার করুন '),
+          //   onTap: () {
+          //     Navigator.pop(context);
+          //   },
+          // ),
+          // ListTile(
+          //   leading: const Icon(Icons.message_outlined),
+          //   title: const Text('আপনার মতামত দিন '),
+          //   onTap: () {
+          //     Navigator.pop(context);
+          //   },
+          // ),
         ],
       ),
     );

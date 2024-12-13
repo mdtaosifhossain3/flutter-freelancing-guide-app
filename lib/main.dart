@@ -4,6 +4,7 @@ import 'package:freelancing_appp/providers/theme_provider.dart';
 import 'package:freelancing_appp/views/home_view.dart';
 import 'package:freelancing_appp/views/otpView/otp_send_view.dart';
 import 'package:freelancing_appp/views/otpView/otp_verify_view.dart';
+import 'package:freelancing_appp/views/splash_view.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
             themeMode: themeChanger.themeMode,
             theme: lightTheme,
             darkTheme: darkTheme,
-            home: HomeView(),
+            home: OtpSendView(),
+
           );
         }));
   }

@@ -39,10 +39,10 @@ class OtpVerificationView extends StatelessWidget {
                           fillColor: Colors.white,
                           filled: true,
                           hintText: "Enter your otp...",
-                          hintStyle: const TextStyle(
+                          hintStyle:  TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
-                              color: Colors.black),
+                              color: greyColor),
                           enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(24),
                               borderSide:

@@ -4,9 +4,9 @@ import 'package:freelancing_appp/views/article_view.dart';
 import 'package:freelancing_appp/widgets/text_widget.dart';
 
 class UniqueColorCard extends StatelessWidget {
-  final String title;
+  final String? title;
   final int index;
-  final String data;
+  final String? data;
 
   const UniqueColorCard({
     super.key,
@@ -14,6 +14,8 @@ class UniqueColorCard extends StatelessWidget {
     required this.index,
     required this.data,
   });
+
+
 
   // Predefined list of colors for light mode
   static const List<Color> lightModeColors = [
@@ -127,7 +129,7 @@ class UniqueColorCard extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return ArticleView(data: data, title: title);
+          return ArticleView(data: data!, title: title!);
         }));
       },
       child: Container(
@@ -150,7 +152,7 @@ class UniqueColorCard extends StatelessWidget {
         ),
         child: Center(
           child: TextWidget(
-            label: title,
+            label: title!,
             textAlign: TextAlign.center,
             color: useGradient
                 ? Colors.white

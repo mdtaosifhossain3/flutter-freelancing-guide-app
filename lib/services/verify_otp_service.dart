@@ -71,20 +71,22 @@ class VerifyOTPService {
     // Send HTTP POST request to the API
     try {
       final response = await http.post(
-        Uri.parse('${dotenv.env["API_LINK"]}/OTP_verify.php'),
+        Uri.parse('https://fluttbizitsolutions.com/api/verify_otp_fguid.php'),
         body: data,
       );
 
       var body = response.body;
       final statusCode = extractValue(body, 'Status code').trim();
       final result = statusCode.replaceAll(":", "").trim();
+
       if (result == "S1000") {
         Navigator.push(context, MaterialPageRoute(builder: (_) {
-          return const HomeView();
+          return  HomeView();
         }));
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Successfully Subscribed')),
         );
+
       } else {
         Navigator.pop(context);
         // print(response.body); // Error occurred
@@ -95,12 +97,12 @@ class VerifyOTPService {
     } on SocketException {
       Navigator.pop(context);
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Time Out')),
+        const SnackBar(content: Text('Network Issue')),
       );
     } catch (e) {
       Navigator.pop(context);
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error: $e')),
+        SnackBar(content: Text('Something went wrong')),
       );
     }
   }

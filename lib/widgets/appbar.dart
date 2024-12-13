@@ -9,13 +9,15 @@ import 'package:provider/provider.dart';
 
 PreferredSizeWidget appbar({title}) {
   return AppBar(
+    automaticallyImplyLeading: false,
     iconTheme: IconThemeData(
       color: blackColor, // Set the menu icon color to black
     ),
     title: title ??
-        const TextWidget(
+         TextWidget(
           label: AppConfig.appName,
           fontWeight: FontWeight.bold,
+          color:primaryTextColor ,
         ),
     actions: [
       Builder(
@@ -30,7 +32,7 @@ PreferredSizeWidget appbar({title}) {
                           themeProvider: themeProvider,
                         ),
                     width: 150,
-                    height: 150,
+                    height: 145,
                     backgroundColor: themeProvider.themeMode == ThemeMode.light
                         ? appbarColor
                         : blackColor,

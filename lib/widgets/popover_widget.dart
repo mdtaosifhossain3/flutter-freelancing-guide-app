@@ -15,7 +15,7 @@ class _PopoverWidgetState extends State<PopoverWidget> {
   // Function to send a message to the SMS app
   Future<void> sendStopMessage() async {
     const phoneNumber = '21213';
-    const message = 'STOP chtai';
+    const message = 'STOP fguide';
 
     final Uri smsUri = Uri(
       scheme: 'sms',
@@ -80,7 +80,7 @@ class _PopoverWidgetState extends State<PopoverWidget> {
                   width: 8,
                 ),
                 Text(
-                  "Unsubscribed",
+                  "Unsubscribe",
                   style: TextStyle(color: Colors.red),
                 ),
               ],
